@@ -15,15 +15,37 @@ def generate_short_code():
     alphabet = string.ascii_letters + string.digits
     return ''.join(secrets.choice(alphabet) for _ in range(6))
 
+# Google Verification (replace with your actual filename)
+@app.route('/google1234567890.html')  # ← CHANGE THIS TO YOUR FILE
+def google_verification():
+    return send_from_directory('static', 'google1234567890.html')  # ← AND THIS
+
+# Dynamic Sitemap
+@app.route('/sitemap.xml')
+def sitemap():
+    base_url = request.host_url.rstrip('/')
+    urls = [
+        {
+            'loc': f"{base_url}/",
+            'lastmod': datetime.now().strftime('%Y-%m-%d'),
+            'priority': '1.0'
+        },
+        # Add all other URLs in this format:
+        {
+            'loc': f"{base_url}/downloader",
+            'lastmod': datetime.now().strftime('%Y-%m-%d'),
+            'priority': '0.8'
+        },
+        # Include all your tools, pages, and blog posts
+    ]
+    response = render_template('sitemap.xml', urls=urls)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
+
 # Homepage
 @app.route('/')
 def home():
     return render_template('index.html')
-
-# Sitemap
-@app.route('/sitemap.xml')
-def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
 
 # Robots.txt
 @app.route('/robots.txt')
@@ -66,7 +88,7 @@ def pdf_tools():
 def qr_generator():
     return render_template('tools/qrcode.html')
 
-# Essential Pages - Reordered as requested
+# Essential Pages (reorganized)
 @app.route('/privacy')
 def privacy():
     return render_template('pages/privacy.html')
@@ -75,7 +97,7 @@ def privacy():
 def terms():
     return render_template('pages/terms.html')
 
-@app.route('/about')  # Moved down here next to terms and privacy
+@app.route('/about')  # Moved next to terms/privacy
 def about():
     return render_template('pages/about.html')
 
@@ -92,7 +114,7 @@ def blog_home():
 def video_downloader_guide():
     return render_template('blog/how-to-use-video-downloader.html')
 
-# [Rest of your blog routes remain unchanged...]
+# [Keep all other existing blog routes...]
 
 # Video Downloader API
 @app.route('/download', methods=['POST'])
