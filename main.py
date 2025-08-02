@@ -83,7 +83,7 @@ def terms():
 def contact():
     return render_template('pages/contact.html')
 
-# Blog Pages
+# Blog Pages (Single consolidated section)
 @app.route('/blog')
 def blog_home():
     return render_template('blog/index.html')
@@ -151,40 +151,6 @@ def download_video():
     except Exception as e:
         return {"error": str(e)}, 500
 
-# ... [Keep all your existing routes ABOVE this point] ...
-
-# ===== PASTE THE BLOG ROUTES HERE =====
-# Blog Routes
-@app.route('/blog')
-def blog_home():
-    return render_template('blog/index.html')
-
-@app.route('/blog/how-to-use-video-downloader')
-def video_downloader_guide():
-    return render_template('blog/how-to-use-video-downloader.html')
-
-@app.route('/blog/url-shortener-guide')
-def url_shortener_guide():
-    return render_template('blog/url-shortener-guide.html')
-
-@app.route('/blog/pdf-tools-guide')
-def pdf_tools_guide():
-    return render_template('blog/pdf-tools-guide.html')
-
-@app.route('/blog/calculator-tips')
-def calculator_tips():
-    return render_template('blog/calculator-tips.html')
-
-@app.route('/blog/qr-code-uses')
-def qr_code_uses():
-    return render_template('blog/qr-code-uses.html')
-
-# ... [Keep all your other existing routes BELOW this point] ...
-# ... [Keep your error handlers and app.run at the bottom] ...
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
-
 # Error Handlers
 @app.errorhandler(404)
 def page_not_found(e):
@@ -194,5 +160,6 @@ def page_not_found(e):
 def server_error(e):
     return render_template('pages/500.html'), 500
 
+# Single app.run() at the end
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)
