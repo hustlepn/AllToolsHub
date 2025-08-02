@@ -3,6 +3,11 @@
 {% block title %}Free Online Tools{% endblock %}
 
 {% block content %}
+<div class="hero">
+    <h1>Your All-in-One Free Toolbox</h1>
+    <p>Simple, fast, and free tools for your everyday needs</p>
+</div>
+
 <div class="tools-container">
     <!-- Video Downloader Card -->
     <div class="tool-card">
@@ -43,5 +48,24 @@
         <p>Create QR codes for any website or text!</p>
         <a href="/qrcode" class="tool-btn">Use Tool</a>
     </div>
+</div>
+
+<div class="recent-posts">
+    <h2>Recent Blog Posts</h2>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <h3><a href="/blog/how-to-use-video-downloader">Video Downloader Guide</a></h3>
+            <p class="meta">January 15, 2023</p>
+        </div>
+        <div class="blog-card">
+            <h3><a href="/blog/url-safety-guide">URL Safety Tips</a></h3>
+            <p class="meta">January 21, 2023</p>
+        </div>
+        <div class="blog-card">
+            <h3><a href="/blog/pdf-security">PDF Security Guide</a></h3>
+            <p class="meta">January 22, 2023</p>
+        </div>
+    </div>
+    <a href="/blog" class="tool-btn">View All Posts</a>
 </div>
 {% endblock %}
