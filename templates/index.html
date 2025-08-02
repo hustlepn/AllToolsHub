@@ -1,60 +1,48 @@
 {% extends "base.html" %}
 
-{% block title %}Free Online Tools{% endblock %}
-
 {% block content %}
-<div class="hero">
-    <h1>Your All-in-One Free Toolbox</h1>
-    <p>Simple, fast, and free tools for your everyday needs</p>
-</div>
-
-<div class="tools-container">
-    <!-- Video Downloader Card -->
+<section class="tools-grid">
     <div class="tool-card">
-        <div class="tool-icon"><i class="fas fa-download"></i></div>
+        <i class="fas fa-download"></i>
         <h2>Video Downloader</h2>
         <p>Download videos from YouTube, Instagram, Facebook and more!</p>
-        <a href="/downloader" class="tool-btn">Use Tool</a>
+        <a href="/tools/downloader" class="btn">Use Tool</a>
     </div>
 
-    <!-- URL Shortener Card -->
     <div class="tool-card">
-        <div class="tool-icon"><i class="fas fa-link"></i></div>
+        <i class="fas fa-link"></i>
         <h2>URL Shortener</h2>
         <p>Make long URLs short and easy to share!</p>
-        <a href="/urlshortener" class="tool-btn">Use Tool</a>
+        <a href="/tools/urlshortener" class="btn">Use Tool</a>
     </div>
 
-    <!-- Calculators Card -->
     <div class="tool-card">
-        <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+        <i class="fas fa-calculator"></i>
         <h2>Calculators</h2>
         <p>Loan, EMI, Interest and other useful calculators!</p>
-        <a href="/calculators" class="tool-btn">Use Tool</a>
+        <a href="/tools/calculators" class="btn">Use Tool</a>
     </div>
 
-    <!-- PDF Tools Card -->
     <div class="tool-card">
-        <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
+        <i class="fas fa-file-pdf"></i>
         <h2>PDF Tools</h2>
         <p>Merge, split, convert PDFs and more!</p>
-        <a href="/pdf" class="tool-btn">Use Tool</a>
+        <a href="/tools/pdf" class="btn">Use Tool</a>
     </div>
 
-    <!-- QR Code Card -->
     <div class="tool-card">
-        <div class="tool-icon"><i class="fas fa-qrcode"></i></div>
+        <i class="fas fa-qrcode"></i>
         <h2>QR Generator</h2>
         <p>Create QR codes for any website or text!</p>
-        <a href="/qrcode" class="tool-btn">Use Tool</a>
+        <a href="/tools/qr" class="btn">Use Tool</a>
     </div>
-</div>
+</section>
 
-<div class="recent-posts">
+<section class="recent-posts">
     <h2>Recent Blog Posts</h2>
     <div class="blog-grid">
         <div class="blog-card">
-            <h3><a href="/blog/how-to-use-video-downloader">Video Downloader Guide</a></h3>
+            <h3><a href="/blog/video-downloader-guide">Video Downloader Guide</a></h3>
             <p class="meta">January 15, 2023</p>
         </div>
         <div class="blog-card">
@@ -62,10 +50,10 @@
             <p class="meta">January 21, 2023</p>
         </div>
         <div class="blog-card">
-            <h3><a href="/blog/pdf-security">PDF Security Guide</a></h3>
+            <h3><a href="/blog/pdf-security-guide">PDF Security Guide</a></h3>
             <p class="meta">January 22, 2023</p>
         </div>
     </div>
-    <a href="/blog" class="tool-btn">View All Posts</a>
-</div>
+    <a href="/blog" class="btn">View All Posts</a>
+</section>
 {% endblock %}
