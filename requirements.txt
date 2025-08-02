@@ -1,1 +1,5 @@
-
+flask
+yt-dlp
+pypdf2
+qrcode
+python-dotenv
