@@ -1,4 +1,4 @@
-/* Main Colors - Using Blue Professional for now */
+/* Main Colors */
 :root {
     --primary: #4285F4;
     --secondary: #34A853;
@@ -21,13 +21,68 @@ body {
 header {
     background-color: var(--primary);
     color: white;
-    padding: 1.5rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
+/* Navigation */
+nav {
+    background-color: var(--primary);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content */
+main {
+    min-height: 80vh;
+    padding: 20px;
 }
 
 /* Tool Cards */
@@ -58,6 +113,7 @@ header h1 {
 .tool-icon {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: var(--primary);
 }
 
 .tool-btn {
@@ -82,4 +138,39 @@ footer {
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 100;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .tools-container {
+        padding: 10px;
+    }
+    
+    .tool-card {
+        width: 100%;
+        max-width: 300px;
+    }
 }
