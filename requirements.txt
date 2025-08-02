@@ -1,5 +1,5 @@
 flask
 yt-dlp
 pypdf2
-qrcode
+qrcode[pil]
 python-dotenv
