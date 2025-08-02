@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Latest Updates - AllToolsHub{% endblock %}
+
+{% block content %}
+<article class="blog-post">
+    <h1>What's New at AllToolsHub</h1>
+    <p class="post-meta">Posted on January 24, 2023 | Updated weekly</p>
+    
+    <section>
+        <h2>Recent Improvements</h2>
+        <ul>
+            <li><strong>Faster downloads:</strong> Video processing 30% quicker</li>
+            <li><strong>New formats:</strong> Support for WebM and AAC audio</li>
+            <li><strong>Dark mode:</strong> Easier nighttime use</li>
+            <li><strong>Accessibility:</strong> Better screen reader support</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Coming Soon</h2>
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <h3>Image Converter</h3>
+                <p>JPG, PNG, WEBP conversion</p>
+            </div>
+            <div class="roadmap-item">
+                <h3>File Compressor</h3>
+                <p>Reduce PDF, image sizes</p>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Your Feedback Matters</h2>
+        <p>Request new tools or report issues at our <a href="/contact">Contact Page</a>.</p>
+    </section>
+</article>
+{% endblock %}
