@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import yt_dlp
 import secrets
 import string
 from urllib.parse import urlparse
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -18,6 +19,16 @@ def generate_short_code():
 @app.route('/')
 def home():
     return render_template('index.html')
+
+# Sitemap
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('static', 'sitemap.xml')
+
+# Robots.txt
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('static', 'robots.txt')
 
 # Tool Pages
 @app.route('/downloader')
