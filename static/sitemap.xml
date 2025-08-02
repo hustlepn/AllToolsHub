@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Homepage -->
     <url>
-        <loc>https://alltoolshub.up.railway.app/</loc>
+        <loc>https://yourdomain.com/</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -10,107 +10,107 @@
     
     <!-- Tools -->
     <url>
-        <loc>https://alltoolshub.up.railway.app/downloade</loc>
+        <loc>https://yourdomain.com/downloade</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/urlshortener</loc>
+        <loc>https://yourdomain.com/urlshortener</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/calculators</loc>
+        <loc>https://yourdomain.com/calculators</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/pdf</loc>
+        <loc>https://yourdomain.com/pdf</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/qrcode</loc>
+        <loc>https://yourdomain.com/qrcode</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     
     <!-- Essential Pages -->
     <url>
-        <loc>https://alltoolshub.up.railway.app/about</loc>
+        <loc>https://yourdomain.com/about</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/privacy</loc>
+        <loc>https://yourdomain.com/privacy</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/terms</loc>
+        <loc>https://yourdomain.com/terms</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/contact</loc>
+        <loc>https://yourdomain.com/contact</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     
     <!-- Blog Posts -->
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog</loc>
+        <loc>https://yourdomain.com/blog</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/how-to-use-video-downloader</loc>
+        <loc>https://yourdomain.com/blog/how-to-use-video-downloader</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/url-shortener-guide</loc>
+        <loc>https://yourdomain.com/blog/url-shortener-guide</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/pdf-tools-guide</loc>
+        <loc>https://yourdomain.com/blog/pdf-tools-guide</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/calculator-tips</loc>
+        <loc>https://yourdomain.com/blog/calculator-tips</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/qr-code-uses</loc>
+        <loc>https://yourdomain.com/blog/qr-code-uses</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/video-downloader-faq</loc>
+        <loc>https://yourdomain.com/blog/video-downloader-faq</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/url-safety-guide</loc>
+        <loc>https://yourdomain.com/blog/url-safety-guide</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/pdf-security</loc>
+        <loc>https://yourdomain.com/blog/pdf-security</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/mobile-optimization</loc>
+        <loc>https://yourdomain.com/blog/mobile-optimization</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://alltoolshub.up.railway.app/blog/tools-update</loc>
+        <loc>https://yourdomain.com/blog/tools-update</loc>
         <lastmod>2023-07-25</lastmod>
         <changefreq>monthly</changefreq>
     </url>
