@@ -3,4 +3,4 @@ Allow: /
 Disallow: /downloads/
 Disallow: /admin/
 
-Sitemap: https://alltoolshub.up.railway.app.xml
+Sitemap: https://alltoolshub.up.railway.app/sitemap.xml
