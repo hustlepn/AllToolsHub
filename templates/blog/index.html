@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}All Blog Posts - AllToolsHub{% endblock %}
+
+{% block content %}
+<div class="blog-home">
+    <h1>All Blog Posts</h1>
+    
+    <div class="blog-grid">
+        <!-- Video Downloader Guide -->
+        <div class="blog-card">
+            <h2><a href="{{ url_for('video_downloader_guide') }}">How to Use Video Downloader</a></h2>
+            <p class="meta">Posted on January 15, 2023</p>
+            <p>Step-by-step instructions for downloading videos from any platform.</p>
+        </div>
+        
+        <!-- URL Shortener Guide -->
+        <div class="blog-card">
+            <h2><a href="{{ url_for('url_shortener_guide') }}">URL Shortener Guide</a></h2>
+            <p class="meta">Posted on January 16, 2023</p>
+            <p>Learn to create and share short links effectively.</p>
+        </div>
+        
+        <!-- PDF Tools Guide -->
+        <div class="blog-card">
+            <h2><a href="{{ url_for('pdf_tools_guide') }}">PDF Tools Guide</a></h2>
+            <p class="meta">Posted on January 17, 2023</p>
+            <p>Complete guide to merging, splitting and converting PDFs.</p>
+        </div>
+        
+        <!-- Add more posts following the same pattern -->
+    </div>
+</div>
+{% endblock %}
