@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}PDF Security Guide - AllToolsHub{% endblock %}
+
+{% block content %}
+<article class="blog-post">
+    <h1>Keeping Your PDFs Secure</h1>
+    <p class="post-meta">Posted on January 22, 2023</p>
+    
+    <section>
+        <h2>Our Security Promise</h2>
+        <p>When you use our PDF tools:</p>
+        <ul>
+            <li>Files are processed in memory (not permanently stored)</li>
+            <li>Automatic deletion after 1 hour</li>
+            <li>SSL encrypted transfers</li>
+            <li>No human reviews your documents</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>How to Protect Sensitive PDFs</h2>
+        <ol>
+            <li>Password-protect sensitive files before uploading</li>
+            <li>Remove metadata (File > Properties in Adobe)</li>
+            <li>Use our tools on private networks only</li>
+            <li>Delete downloaded files after use</li>
+        </ol>
+    </section>
+    
+    <section>
+        <h2>Recommended Tools</h2>
+        <p>For maximum security:</p>
+        <ul>
+            <li>PDF Encryption Tool</li>
+            <li>Metadata Remover</li>
+            <li>Redaction Assistant</li>
+        </ul>
+        <p><a href="/pdf" class="tool-btn">Access PDF Tools</a></p>
+    </section>
+</article>
+{% endblock %}
