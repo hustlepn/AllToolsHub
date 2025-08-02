@@ -1,1 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
 
+.tool-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    width: 200px;
+    background: #4285F4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
