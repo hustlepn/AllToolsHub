@@ -159,6 +159,103 @@ def page_not_found(e):
 @app.errorhandler(500)
 def server_error(e):
     return render_template('pages/500.html'), 500
+from datetime import datetime
+from flask import url_for
 
+@app.route('/sitemap.xml')
+def sitemap():
+    """Generate sitemap dynamically with all routes"""
+    base_url = request.host_url.rstrip('/')
+    lastmod = datetime.now().strftime('%Y-%m-%d')
+    
+    # List all your URLs with their metadata
+    urls = [
+        # Homepage
+        {
+            'loc': f"{base_url}/",
+            'lastmod': lastmod,
+            'changefreq': 'daily',
+            'priority': '1.0'
+        },
+        # Tools
+        {
+            'loc': f"{base_url}/downloader",
+            'lastmod': lastmod,
+            'changefreq': 'weekly'
+        },
+        {
+            'loc': f"{base_url}/urlshortener",
+            'lastmod': lastmod,
+            'changefreq': 'weekly'
+        },
+        {
+            'loc': f"{base_url}/calculators",
+            'lastmod': lastmod,
+            'changefreq': 'weekly'
+        },
+        {
+            'loc': f"{base_url}/pdf",
+            'lastmod': lastmod,
+            'changefreq': 'weekly'
+        },
+        {
+            'loc': f"{base_url}/qrcode",
+            'lastmod': lastmod,
+            'changefreq': 'weekly'
+        },
+        # Pages
+        {
+            'loc': f"{base_url}/about",
+            'lastmod': lastmod,
+            'changefreq': 'monthly'
+        },
+        {
+            'loc': f"{base_url}/privacy",
+            'lastmod': lastmod,
+            'changefreq': 'monthly'
+        },
+        {
+            'loc': f"{base_url}/terms",
+            'lastmod': lastmod,
+            'changefreq': 'monthly'
+        },
+        {
+            'loc': f"{base_url}/contact",
+            'lastmod': lastmod,
+            'changefreq': 'monthly'
+        },
+        # Blog
+        {
+            'loc': f"{base_url}/blog",
+            'lastmod': lastmod,
+            'changefreq': 'weekly'
+        }
+    ]
+    
+    # Add blog posts dynamically (example)
+    blog_posts = [
+        'how-to-use-video-downloader',
+        'url-shortener-guide',
+        'pdf-tools-guide',
+        'calculator-tips',
+        'qr-code-uses',
+        'video-downloader-faq',
+        'url-safety-guide',
+        'pdf-security',
+        'mobile-optimization',
+        'tools-update'
+    ]
+    
+    for post in blog_posts:
+        urls.append({
+            'loc': f"{base_url}/blog/{post}",
+            'lastmod': lastmod,
+            'changefreq': 'monthly'
+        })
+    
+    response = render_template('sitemap.xml', urls=urls)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)
