@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All-in-One Free Toolbox</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
+    <title>AllToolsHub - {% block title %}Free Online Tools{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation Bar (Without "About") -->
-  <nav class="navbar">
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/downloader">Downloader</a>
-    <a href="/url-shortener">URL Shortener</a>
-    <a href="/calculators">Calculators</a>
-  </nav>
+    <header>
+        <div class="container">
+            <h1>Your All-in-One Free Toolbox</h1>
+            <p class="tagline">Simple, fast, and free tools for your everyday needs</p>
+        </div>
+    </header>
 
-  <!-- Main Content -->
-  <main class="container">
-    <h1>Your All-in-One Free Toolbox</h1>
-    <p class="subtitle">Simple, fast, and free tools for your everyday needs</p>
+    <nav>
+        <div class="container">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/tools/downloader">Video Downloader</a>
+            <a href="/tools/urlshortener">URL Shortener</a>
+            <a href="/tools/calculators">Calculators</a>
+        </div>
+    </nav>
 
-    <div class="tool-section">
-      <h2>Video Downloader</h2>
-      <p>Download videos from YouTube, Instagram, Facebook and more!</p>
-      <button class="tool-button">Use Tool</button>
-    </div>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
 
-    <div class="tool-section">
-      <h2>URL Shortener</h2>
-      <p>Make long URLs short and easy to share!</p>
-      <button class="tool-button">Use Tool</button>
-    </div>
-  </main>
-
-  <!-- Footer (With "About" Added) -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="/privacy">Privacy Policy</a>
-      <span>|</span>
-      <a href="/terms">Terms of Service</a>
-      <span>|</span>
-      <a href="/about">About</a>
-    </div>
-    <div class="copyright">
-      © 2023 AllToolsHub | Made with 💹 for you
-    </div>
-  </footer>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a> | 
+                <a href="/terms">Terms of Service</a> | 
+                <a href="/about">About</a>
+            </div>
+            <div class="copyright">
+                © 2023 AllToolsHub | Made with ❤️ for you
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
