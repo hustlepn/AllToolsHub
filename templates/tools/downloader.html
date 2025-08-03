@@ -1,67 +1,26 @@
-{% extends "layouts/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Video Downloader - AllToolsHub{% endblock %}
 
 {% block content %}
-<div class="page-content">
-    <h1>Free Video Downloader</h1>
-    <p>Download videos from YouTube, Facebook, Instagram and more with one click!</p>
-
-    <form id="downloadForm" method="POST" action="/download">
-        <div class="form-group">
-            <label for="url">Paste Video URL:</label>
-            <input type="url" id="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required>
-        </div>
-        <button class="submit-btn" type="submit">Fetch Video Info</button>
+<div class="tool-container">
+    <h1>Social Media Video Downloader</h1>
+    <p>Download videos from Facebook, Instagram, YouTube and more.</p>
+    
+    <form method="post" class="tool-form">
+        <input type="url" name="video_url" placeholder="Enter video URL" required>
+        <button type="submit">Download</button>
     </form>
 
-    <div id="result" style="display:none; margin-top:30px;">
-        <h2>Video Info</h2>
-        <img id="thumbnail" src="" alt="Video Thumbnail" style="max-width: 100%; border-radius: 8px;">
-        <h3 id="title" style="margin-top: 15px;"></h3>
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
 
-        <div id="downloadLinks" style="margin-top:20px;"></div>
+    {% if filename %}
+    <div class="result-box">
+        <p>✅ Video downloaded:</p>
+        <a href="{{ url_for('static', filename='downloads/' + filename) }}" download>Download Now</a>
     </div>
+    {% endif %}
 </div>
-
-<script>
-document.getElementById("downloadForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const url = document.getElementById("url").value;
-    fetch("/download", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: "url=" + encodeURIComponent(url)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            alert("Error: " + data.error);
-            return;
-        }
-
-        document.getElementById("result").style.display = "block";
-        document.getElementById("title").textContent = data.title;
-        document.getElementById("thumbnail").src = data.thumbnail;
-
-        const linksContainer = document.getElementById("downloadLinks");
-        linksContainer.innerHTML = "";
-
-        data.formats.forEach(format => {
-            if (format.url && format.ext === "mp4" && format.filesize) {
-                const btn = document.createElement("a");
-                btn.href = format.url;
-                btn.className = "tool-btn";
-                btn.target = "_blank";
-                btn.textContent = `Download (${(format.filesize / 1024 / 1024).toFixed(1)} MB, ${format.format_note || ''})`;
-                linksContainer.appendChild(btn);
-            }
-        });
-    })
-    .catch(err => {
-        alert("Failed to fetch video info.");
-        console.error(err);
-    });
-});
-</script>
 {% endblock %}
