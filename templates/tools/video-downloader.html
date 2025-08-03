@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<div class="container">
+    <form action="/download" method="POST">
+        <input type="text" name="url" placeholder="Enter Facebook video URL" required>
+        <button type="submit">Download</button>
+    </form>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if success %}
+        <div class="video-details">
+            <img src="{{ thumbnail }}" alt="Thumbnail">
+            <h2>{{ title }}</h2>
+            <p><strong>Duration:</strong> {{ duration }} seconds</p>
+            <a class="download-btn" href="{{ url_for('download_file', filename=filename) }}">⬇️ Download This Video in MP4</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
