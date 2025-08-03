@@ -1,62 +1,48 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, send_file
+import yt_dlp
+import os
+import uuid
 
 app = Flask(__name__)
 
+DOWNLOAD_FOLDER = 'downloads'
+os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
+
 @app.route('/')
-def home():
-    return render_template('index.html')
+def index():
+    return render_template('tools/video-downloader.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/download', methods=['POST'])
+def download():
+    url = request.form['url']
+    uid = str(uuid.uuid4())
+    output_path = f"{DOWNLOAD_FOLDER}/{uid}.mp4"
 
-@app.route('/privacy')
-def privacy():
-    return render_template('privacy.html')
+    ydl_opts = {
+        'format': 'bestvideo+bestaudio/best',
+        'merge_output_format': 'mp4',
+        'outtmpl': output_path,
+        'quiet': True,
+        'noplaylist': True
+    }
 
-@app.route('/terms')
-def terms():
-    return render_template('terms.html')
+    info = None
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(url, download=True)
 
-@app.route('/blog')
-def blog():
-    return render_template('blog.html')
+        return render_template('tools/video-downloader.html', 
+                               success=True,
+                               title=info.get('title'),
+                               thumbnail=info.get('thumbnail'),
+                               duration=info.get('duration'),
+                               filename=os.path.basename(output_path))
+    except Exception as e:
+        return render_template('tools/video-downloader.html', error=str(e))
 
-@app.route('/blog/video-guide')
-def blog_video_guide():
-    return render_template('blog_posts/video_guide.html')
-
-@app.route('/blog/url-safety')
-def blog_url_safety():
-    return render_template('blog_posts/url_safety.html')
-
-@app.route('/blog/pdf-security')
-def blog_pdf_security():
-    return render_template('blog_posts/pdf_security.html')
-
-@app.route('/tools/downloader')
-def tool_downloader():
-    return render_template('tools/downloader.html')
-
-@app.route('/tools/shortener')
-def tool_shortener():
-    return render_template('tools/shortener.html')
-
-@app.route('/tools/qr')
-def tool_qr():
-    return render_template('tools/qr.html')
-
-@app.route('/tools/pdf-tools')
-def tool_pdf():
-    return render_template('tools/pdf_tools.html')
-
-@app.route('/tools/calculator')
-def tool_calculator():
-    return render_template('tools/calculator.html')
-
-import os
+@app.route('/download_file/<filename>')
+def download_file(filename):
+    return send_file(os.path.join(DOWNLOAD_FOLDER, filename), as_attachment=True)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=False, host='0.0.0.0', port=port)
-
+    app.run(debug=True)
