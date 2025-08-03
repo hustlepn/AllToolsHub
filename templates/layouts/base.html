@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AllToolsHub - Your all-in-one toolbox" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='images/icon-192.png') }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='images/icon-512.png') }}">
+  <title>AllToolsHub</title>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/icon-192.png') }}" alt="logo" width="30" />
+      <span>AllToolsHub</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/tools/downloader">Downloader</a>
+      <a href="/tools/shortener">URL Shortener</a>
+      <a href="/tools/calculator">Calculators</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <a href="/privacy">Privacy Policy</a> |
+    <a href="/terms">Terms of Service</a>
+    <p>© 2023 AllToolsHub | Made with ❤️ for you</p>
+  </footer>
+</body>
+</html>
