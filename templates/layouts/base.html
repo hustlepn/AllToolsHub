@@ -1,70 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic Meta -->
     <meta charset="UTF-8">
+    <title>AllLinkDownloader - Facebook Video Downloader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AllToolsHub - Free online tools for everyday tasks like video downloading, URL shortening, PDF tools, QR codes, and more.">
-
-    <!-- SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="AllToolsHub">
-    <link rel="canonical" href="https://alltoolshub.up.railway.app/">
-
-    <!-- Page Title -->
-    <title>{% block title %}AllToolsHub - Free Online Tools{% endblock %}</title>
-
-    <!-- Styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Favicon (optional) -->
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="AllToolsHub Logo">
-                AllToolsHub
-            </a>
-            <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/downloader">Downloader</a>
-                <a href="/urlshortener">Shortener</a>
-                <a href="/calculators">Calculators</a>
-                <a href="/pdf">PDF Tools</a>
-                <a href="/qrcode">QR Generator</a>
-                <a href="/blog">Blog</a>
-                <a href="/contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content Area -->
+    <header>
+        <h1><span style="color:#2b8a3e;">All</span><span style="color:#000;">Link</span><span style="color:#e63946;">Downloader</span></h1>
+    </header>
+    
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-links">
-            <a href="/about">About</a> |
-            <a href="/privacy">Privacy</a> |
-            <a href="/terms">Terms</a> |
-            <a href="/contact">Contact</a>
-        </div>
-        <div class="copyright">
-            © {{ 2025 }} AllToolsHub. All rights reserved.
-        </div>
+        <p>&copy; 2025 AllToolsHub. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
