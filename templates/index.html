@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  <section>
+    <h1 style="text-align:center;">“Your All-in-One Tool Hub”</h1>
+    <p style="text-align:center; font-size: 18px;">A collection of free tools to make your life easier.</p>
+  </section>
+
+  <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 2em;">
+    <div class="tool-card">
+      <h3>📥 Video Downloader</h3>
+      <p>Download videos from social media platforms.</p>
+      <a href="/tools/downloader">Use Tool</a>
+    </div>
+    <div class="tool-card">
+      <h3>🔗 URL Shortener</h3>
+      <p>Make your long links short and shareable.</p>
+      <a href="/tools/shortener">Use Tool</a>
+    </div>
+    <div class="tool-card">
+      <h3>🧮 Loan Calculator</h3>
+      <p>Calculate EMI or monthly payments.</p>
+      <a href="/tools/calculator">Use Tool</a>
+    </div>
+    <div class="tool-card">
+      <h3>📄 PDF Tools</h3>
+      <p>Merge, split, and convert PDFs.</p>
+      <a href="/tools/pdf-tools">Use Tool</a>
+    </div>
+    <div class="tool-card">
+      <h3>📱 QR Code Generator</h3>
+      <p>Create custom QR codes for links or text.</p>
+      <a href="/tools/qr">Use Tool</a>
+    </div>
+  </section>
+{% endblock %}
