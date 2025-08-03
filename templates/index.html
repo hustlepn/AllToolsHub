@@ -1,51 +1,71 @@
-{% extends "layouts/base.html" %}
+{% extends "base.html" %}
+
+{% block title %}Free Online Tools{% endblock %}
 
 {% block content %}
-  <section>
-    <h1 style="text-align:center;">“Your All-in-One Tool Hub”</h1>
-    <p style="text-align:center; font-size: 18px;">A collection of free tools to make your life easier.</p>
-  </section>
+<div class="hero">
+    <h1>Your All-in-One Free Toolbox</h1>
+    <p>Simple, fast, and free tools for your everyday needs</p>
+</div>
 
-  <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 2em;">
+<div class="tools-container">
+    <!-- Video Downloader Card -->
     <div class="tool-card">
-      <div class="tool-card-icon">
-        <img src="{{ url_for('static', filename='images/downloader.png') }}" alt="Downloader">
-      </div>
-      <h3>Video Downloader</h3>
-      <p>Download videos from social media platforms.</p>
-      <a href="/tools/downloader">Use Tool</a>
+        <div class="tool-icon"><i class="fas fa-download"></i></div>
+        <h2>Video Downloader</h2>
+        <p>Download videos from YouTube, Instagram, Facebook and more!</p>
+        <a href="/downloader" class="tool-btn">Use Tool</a>
     </div>
+
+    <!-- URL Shortener Card -->
     <div class="tool-card">
-      <div class="tool-card-icon">
-        <img src="{{ url_for('static', filename='images/shortener.png') }}" alt="Shortener">
-      </div>
-      <h3>URL Shortener</h3>
-      <p>Make your long links short and shareable.</p>
-      <a href="/tools/shortener">Use Tool</a>
+        <div class="tool-icon"><i class="fas fa-link"></i></div>
+        <h2>URL Shortener</h2>
+        <p>Make long URLs short and easy to share!</p>
+        <a href="/urlshortener" class="tool-btn">Use Tool</a>
     </div>
+
+    <!-- Calculators Card -->
     <div class="tool-card">
-      <div class="tool-card-icon">
-        <img src="{{ url_for('static', filename='images/calculator.png') }}" alt="Calculator">
-      </div>
-      <h3>Loan Calculator</h3>
-      <p>Calculate EMI or monthly payments.</p>
-      <a href="/tools/calculator">Use Tool</a>
+        <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+        <h2>Calculators</h2>
+        <p>Loan, EMI, Interest and other useful calculators!</p>
+        <a href="/calculators" class="tool-btn">Use Tool</a>
     </div>
+
+    <!-- PDF Tools Card -->
     <div class="tool-card">
-      <div class="tool-card-icon">
-        <img src="{{ url_for('static', filename='images/pdf.png') }}" alt="PDF">
-      </div>
-      <h3>PDF Tools</h3>
-      <p>Merge, split, and convert PDFs.</p>
-      <a href="/tools/pdf-tools">Use Tool</a>
+        <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
+        <h2>PDF Tools</h2>
+        <p>Merge, split, convert PDFs and more!</p>
+        <a href="/pdf" class="tool-btn">Use Tool</a>
     </div>
+
+    <!-- QR Code Card -->
     <div class="tool-card">
-      <div class="tool-card-icon">
-        <img src="{{ url_for('static', filename='images/qr.png') }}" alt="QR Code">
-      </div>
-      <h3>QR Code Generator</h3>
-      <p>Create custom QR codes for links or text.</p>
-      <a href="/tools/qr">Use Tool</a>
+        <div class="tool-icon"><i class="fas fa-qrcode"></i></div>
+        <h2>QR Generator</h2>
+        <p>Create QR codes for any website or text!</p>
+        <a href="/qrcode" class="tool-btn">Use Tool</a>
     </div>
-  </section>
+</div>
+
+<div class="recent-posts">
+    <h2>Recent Blog Posts</h2>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <h3><a href="/blog/how-to-use-video-downloader">Video Downloader Guide</a></h3>
+            <p class="meta">January 15, 2023</p>
+        </div>
+        <div class="blog-card">
+            <h3><a href="/blog/url-safety-guide">URL Safety Tips</a></h3>
+            <p class="meta">January 21, 2023</p>
+        </div>
+        <div class="blog-card">
+            <h3><a href="/blog/pdf-security">PDF Security Guide</a></h3>
+            <p class="meta">January 22, 2023</p>
+        </div>
+    </div>
+    <a href="/blog" class="tool-btn">View All Posts</a>
+</div>
 {% endblock %}
