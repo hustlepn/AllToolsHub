@@ -48,3 +48,27 @@ footer a {
   text-decoration: none;
   margin: 0 5px;
 }
+
+/* Tool card styles */
+.tool-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.tool-card:hover {
+  transform: scale(1.02);
+}
+
+.tool-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0.5em 1em;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
